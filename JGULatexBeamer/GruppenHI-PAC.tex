@@ -1,0 +1,182 @@
+\documentclass[xcolor={usenames,dvipsnames}, 
+	hyperref={
+	colorlinks=true, 						% Internetseiten werden farblich hervorgehoben
+	linkcolor=black, 						% Farbe für interne Referenzen
+	urlcolor=black,							% Farbe für Links auf Webseiten
+	citecolor=black,						% Farbe für Zitate \cite{<bibtexid>}
+	pdfpagelabels=false,
+	%pdfauthor={}, 
+	%pdftitle={}				% Verewigt Author und Titel in PDF-Informationen
+	},
+	ignorenonframetext,			% Keine Nummerierung auf erster Folie
+	compress					% Minimize navigation bars
+]{beamer}
+%===== Formatierungs-Packages =====
+	\usepackage[T1]{fontenc}				% fontenc und inputenc ermöglichen
+	%\usepackage[latin1]{inputenc}			% Silbentrennung und Eingabe 
+	\usepackage[utf8]{inputenc}
+	%\usepackage{lmodern}					% Schrift wirkt (in pdf-Ausgabe) fließender
+  							
+%===== Sprach-Packages =====
+	\usepackage[ngerman]{babel}			% Babel für diverse Sprachanpassungen, 
+  										% z.B. Anführungszeichen
+%===== Interne Latex-Packages =====
+%	\usepackage{fixltx2e} 				% Verbessert einige Kernkompetenzen von LaTeX2e
+  
+%===== Mathe-Packages ======
+	\usepackage{amsmath, amssymb, amsfonts} 	% Mathematische Features der American Mathematical
+	%\usepackage{cancel}
+	%\usepackage[output-decimal-marker={,},  	% Deutsche Dezimaltrennung mit Komma
+	%	separate-uncertainty = true,		  	% Fehlerangabe: \SI{3(2)}{\tesla}
+	%	per-mode=fraction,					  	% Einheiten als Bruch darstellen
+	%	exponent-product = \cdot,			  	% Exponentialschreibweise mit Malzeichen \SI{3e8}{\tesla}
+	%	math-ohm,
+	%	range-phrase = -					% Option für Bereichsangabe \SIrange{3}{4}{\tesla}
+	%	]{siunitx} 						  	
+ 								% Elementar wichtig für Einheiten \siunit{3}{\milli\meter}					% \unit{\tesla}, \num{<Zahl>}
+  
+%===== Grafik/Tabellen-Packages ======
+	\usepackage{xcolor}						% Erlaubt das Verwenden von Farben
+	\usepackage{graphicx} 					% Erlaub das Einbinden von Bildern
+	\usepackage{multirow} 					% Erlaubt multicolumn{3}{c}{Bla}
+	%\usepackage{rotating} 					% Erlaub sidewaystable-Umgebung
+	%\usepackage[miktex,subfolder,siunitx]{gnuplottex} % Gnuplot in Latex
+  
+%===== bibliography =====
+	\usepackage[numbers,square]{natbib} 	%Einbinden der Bibliothek mit "[1]" Zitat
+  
+%===== Sonstiges ======
+	%\usepackage{url}						% Erlaubt das Einbinden einer URL
+	\usepackage{pdfpages}					% \includepdf{<file>.pdf} wird verfügbar
+	%\usepackage[flushmargin,				% Fußnoten bündig mit Seitenrändern
+	%	hang,									% Hängender Zeilenumbruch bei Fußnoten 
+	%	bottom]{footmisc}						% Zwingt Fußnoten ans Ende der Seite
+	\usepackage{hyperref} 	% Hyperref-Package verlinkt interne Referenzen
+	%\usepackage{lipsum} 	% Für Testzecke \lipsum[1]
+  
+%===== Beamer template - Spezifikationen ======
+	\usepackage{beamerthemetexsx}
+	\setbeamertemplate{mini frames}[box]
+	%\renewcommand{\bibsection}{\section{Literature}}
+
+%==== Informationen ====
+	
+	\title[PAC]{Presentation-Abstraction-Control} 
+	%\subtitle[Optionaler Subtitle]{Optionaler Subtitle des sehr langen Titels der Präsentation}
+	\author[Grn. HI]{Gruppen H und I} 
+	\institute[SE]{Institut an der JGU Mainz}
+	\date{\today}
+	%Titelgraphic
+	\titlegraphic{\includegraphics[height=1.9cm,keepaspectratio]{Logos/Gefoerdert_vom_BMBF_weiss.pdf}}
+	%Logo on each slide
+	%\logo{
+		%\vspace*{-.25cm} %vertical displacement of logo position
+		%\includegraphics[height=1cm,keepaspectratio]{Logos/Gefoerdert_vom_BMBF_eng.jpg}
+		%\hspace*{.25cm} %horizontal displacement of logo position
+		%}
+	%}
+%\pdfminorversion=4	% PDF 1.4, um Lesefehlern mit Acrobat entgegenzuwirken
+	
+%==== Begin presentation ====
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]  %Keine Fußzeile auf erster Seite und keine Nummerierung
+	\titlepage
+\end{frame}
+	
+\addtocounter{framenumber}{-1} %Titelseite wird nicht gezählt im Counter
+
+%\setbeamertemplate{footline}{authorinstitutetitle} %Aktiviere Fußzeile
+
+%---------------------------------------------------------------------
+
+\begin{frame}
+	\frametitle{Inhaltsverzeichnis}
+	\tableofcontents
+\end{frame}%[pausesections]} 
+
+%---------------------------------------------------------------------
+
+\section{Titel der Section 1}
+
+\frame{\sectionpage}
+
+%---------------------------------------------------------------------
+
+\subsection{Titel der Subsection 1}
+
+\begin{frame}
+	\subsectionpage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Folientitel: Aufzählungen} 
+	\framesubtitle{Folienuntertitel: Nummeriert und nicht nummeriert.} 
+	
+	\begin{enumerate} 
+	\item Item 1 
+	\item Item 2 
+	\item Item 3 
+	\end{enumerate}
+	\begin{itemize}
+	\item Eins\dots
+	\item Zwei\dots
+	\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------------------
+
+\subsection{Subsection 2}
+
+\begin{frame}
+	\frametitle{Blocks und Theoreme}
+	\framesubtitle{Block, alertblock, exampleblock,}
+	\begin{columns}[t]
+		\column{.5\textwidth}
+			
+				\begin{block}{Blocktitel}
+						Blocktext
+				\end{block}
+				\begin{exampleblock}{Beispielblocktitel}
+						Beispielblocktext
+				\end{exampleblock}
+				\begin{alertblock}{Warnungsblocktitel}
+								Warnungsblocktext
+				\end{alertblock}
+		\column{.5\textwidth}
+			\begin{theorem}
+				Theoremtext
+			\end{theorem} 
+			
+			\begin{definition}
+        Definition
+			\end{definition}
+			
+			\begin{lemma}
+        Lemma
+			\end{lemma}
+	\end{columns}
+\end{frame}
+
+\subsubsection{Subsubsection 2.1}
+
+%---------------------------------------------------------------------
+
+\section{Section 2}
+
+
+%---------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------
+
+%\section{Literature}
+\begin{frame}
+\frametitle{Literature}
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{beamerbibliography}
+\end{frame}
+
+\end{document}
