@@ -75,6 +75,12 @@ There are three main Problems based on that:
 \begin{frame}
 \frametitle{Solution}
 
+\begin{center}
+ \includegraphics[width=0.7\textwidth]{./pics/solution.eps}
+ % solution.eps: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=0 -1 744 237
+\end{center}
+
+
  \begin{itemize}
   \item Tree-like hierarchy of PAC agents
   \item PAC agents consist of:
@@ -112,6 +118,28 @@ between other agents)
 
 \begin{frame}
  \frametitle{Bottom-Level Agent}
+ 
+ \begin{itemize}
+
+  \item Presentation component
+  \begin{itemize}
+   \item specific view on the object
+    \item provides access to functions
+    \item maintains information
+  \end{itemize}
+  \item Abstraction component
+  \begin{itemize}
+    \item maintains agent-specific data
+  \end{itemize}
+  \item Control component
+  \begin{itemize}
+   \item manages relation between abstraction and presentation component
+    \item communication to intermediate agents
+  \end{itemize}
+
+ \end{itemize}
+
+
  
  \note{Vera}
 \end{frame}
