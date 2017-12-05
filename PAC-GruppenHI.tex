@@ -13,6 +13,8 @@
 
 \usepackage{multicol}
 
+\usepackage{endnotes}
+
 \newcommand{\pfeil}{$\rightarrow $ }
 
 	\title[PAC]{Presentation-Abstraction-Control} 
@@ -28,6 +30,9 @@
 
 \begin{document}
 
+\endnotetext[1]{Buschmann, F., Meunier, R., Rohnert, H., Sommerlad, P., Stal, M.: Pattern-Oriented Software Architecture, A System of Patterns; Wiley 1996}
+
+
 \begin{frame}[plain,noframenumbering]  %Keine Fußzeile auf erster Seite und keine Nummerierung
 	\titlepage
 \end{frame}
@@ -35,6 +40,8 @@
 
 
 \section{Example}
+
+
 
 \section{Context}
 
@@ -76,18 +83,18 @@ There are three main Problems based on that:
 \frametitle{Solution}
 
 \begin{center}
- \includegraphics[width=0.7\textwidth]{./pics/solution.eps}
+ \includegraphics[width=0.8\textwidth]{./pics/solution.eps}
  % solution.eps: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=0 -1 744 237
 \end{center}
 
 
  \begin{itemize}
   \item Tree-like hierarchy of PAC agents
-  \item PAC agents consist of:
+  \item every PAC agents consist of:
   \begin{itemize}
    \item \textbf{Presentation} component (visible behavior)
-   \item \textbf{Abstraction} component (data model with its functional operations)
-   \item \textbf{Control} component (connects data model and view; provides communication
+   \item \textbf{Abstraction} comp.(data model with functional operations)
+   \item \textbf{Control} comp. (connects data model and view; provides communication
 between other agents)
   \end{itemize}
  \end{itemize}
@@ -99,11 +106,11 @@ between other agents)
 
 \section{Structure}
 
-\begin{frame}
- \frametitle{Structure}
+%\begin{frame}
+% \frametitle{Structure}
  
- \note{Nicole, Jaqueline}
-\end{frame}
+% \note{Nicole, Jaqueline}
+%\end{frame}
 
 
 \subsection{Top-Level Agent}
@@ -204,34 +211,82 @@ between other agents)
 
 \begin{frame}
  \frametitle{Dynamics}
- Bild 1
  
- %TODO Bild 1 erstellen / einfügen
+\begin{figure}
+ \centering
+ \includegraphics[width=\textwidth]{./pics/dynamics1.png}
+ % dynamics1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption[Cap]{Dynamics: first scenario\endnotemark[1]}
+ \label{abb:dyn1}
+\end{figure}
  
  \note{Nicole}
 \end{frame}
 
 \begin{frame}
  \frametitle{Dynamics}
- Bild 2
- 
- %TODO Bild 2 erstellen / einfügen
+
+ \begin{figure}
+ \centering
+ \includegraphics[width=\textwidth]{./pics/dynamics2.png}
+ % dynamics1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption[Cap]{Dynamics: secound scenario\endnotemark[1]}
+ \label{abb:dyn2}
+\end{figure}
  
  \note{Nicole}
 \end{frame}
 
-\section{Known Uses}
-
+\section{Context}
 \begin{frame}
- \frametitle{Known Issues}
+ \frametitle{Context}
+ \begin{itemize}
+  \item interactive software
+  \item multi-user applications
+  \item dynamic systems
+ \end{itemize}
  
  \note{Fabian}
+
 \end{frame}
+
+
+\section{Known Uses}
+
+
+\begin{frame}
+ \frametitle{Known Issues: Network Traffic Management}
+ 
+ \begin{itemize}
+  \item displays traffic in network
+  \item frequently collects data from units for evaluation
+  \item allows change of network topology
+ \end{itemize}
+
+ 
+ 
+ \note{Fabian}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+  \frametitle{Known Issues: Network Traffic Management}
+  
+  \begin{center}
+ \includegraphics[width=\textwidth]{./pics/knownUses1.png}
+ % knownUses1.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+\end{center}
+ \note{Fabian}
+\end{frame}
+
 
 \begin{frame}
  \frametitle{Quellen}
 
- %TODO Quellen hinzufügen
+\theendnotes
  
  \note{Rebecca}
 \end{frame}
